@@ -1,0 +1,249 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#textTitle {
+    width: 100%;
+    height: 70px;
+}
+
+#textTitle h1 {
+    padding: 1%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    color: #000;
+}
+
+#tab-que {
+    margin: auto;
+    text-align: center;
+}
+
+#container {
+    padding: 5% 5% 0;
+    display: flex;
+}
+
+#container > div {
+    margin: auto;
+}
+
+.list {
+    border-radius: 2%;
+    max-width: 500px;
+    width: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#questionList h4 {
+    text-align: center;
+}
+
+.list .tab-que {
+    color: black;
+    text-align: center;
+    margin-top: 5px;
+    padding: 8px 15px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    user-select: none;
+    /* margin: auto; */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 20px;
+    margin-bottom: 3px;
+}
+
+.list a.active {
+    background-color: #ddd;
+    font-weight: bold;
+}
+.list a.done {
+    border: 1px solid rgb(92, 173, 235);
+}
+
+.list a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+#questionTitle {
+    border: 2px solid rgb(151, 130, 130);
+    display: inline-block;
+    width: 50%;
+    border-radius: 1%;
+    box-shadow: 5px 6px rgba(185, 148, 148, 0.3);
+    padding: 0 5%;
+}
+
+.questionAnswer {
+    margin: 5% 0;
+}
+
+#time {
+    text-align: center;
+}
+#time > h2 {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.question {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    user-select: none;
+    word-break: break-word;
+}
+
+.question input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+.question:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.question input:checked ~ .checkmark {
+    background-color: #4d4ae8;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.question input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.question .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#questionTitle > h3 {
+    display: flex;
+    justify-content: center;
+}
+#questionTitle > .btnClick {
+    border-radius: 0;
+    width: 100%;
+    background-color: lightseagreen;
+    border: 1px solid lightskyblue;
+}
+
+#time > * {
+    margin-left: 5%;
+}
+
+#reload {
+    position: relative;
+    display: none;
+    text-align: center;
+    margin: 5% auto;
+    z-index: 99;
+}
+
+.btnClick {
+    appearance: button;
+    background-color: rgb(223, 69, 69);
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    border: 1px solid rgb(223, 69, 69);
+    border-radius: 1rem;
+    box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(46, 54, 80, 0.075) 0 1px 1px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-transform: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+.btnClick:hover {
+    background: #19e912;
+    color: #333;
+    border-color: #19e912;
+}
+
+.btnClick:active {
+    background-color: #19e912;
+    background-image: none;
+    border-color: #19e912;
+    box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset;
+}
+
+.btnClick:active:focus {
+    box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset, rgba(104, 101, 235, 0.5) 0 0 0 0.2rem;
+}
+
+.btnClick:disabled {
+    background-image: none;
+    box-shadow: none;
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+#startTime {
+    margin: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    #container {
+        flex-direction: column-reverse;
+    }
+    #time {
+        width: auto;
+    }
+    #question {
+        width: auto;
+    }
+    .list {
+        max-width: 100%;
+    }
+    .btnClick {
+        margin: inherit;
+    }
+}
