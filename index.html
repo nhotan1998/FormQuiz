@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>CountDown</title>
+</head>
+
+<body onload="loadData()">
+    <div id="textTitle">
+        <h1>Quiz</h1>
+    </div>
+    <div id="container">
+        <div id="questionTitle">
+            <h3>Multiple-choice Questions</h3>
+            <br />
+            <div id="time">
+                <h2 id="renderPoint">Time: </h2>
+                <h2 id="startTime">9:00</h2>
+            </div>
+            <br />
+            <div id="questionList">
+                <h4>List Questions</h4>
+                <div class="list" id="list">
+                    <a class="tab-que active"> 1</a>
+                    <a class="tab-que"> 2</a>
+                    <a class="tab-que"> 3</a>
+                    <a class="tab-que"> 4</a>
+                    <a class="tab-que"> 5</a>
+                    <a class="tab-que"> 6</a>
+                    <a class="tab-que"> 7</a>
+                    <a class="tab-que"> 8</a>
+                    <a class="tab-que"> 9</a>
+                    <a class="tab-que"> 10</a>
+                </div>
+                <button id="reload" class="btnClick" onclick="window.location.reload();">Rework</button>
+
+            </div>
+            <div id="questionAnswer" class="questionAnswer">
+                <h4>Question <b id="titleKey"></b>: <b id="valueKey"></b></h4>
+                <label class="question"><b class="answer">Answer</b>
+                    <input class="checkbox" type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="question"><b class="answer">Answer</b>
+                    <input class="checkbox" type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="question"><b class="answer">Answer</b>
+                    <input class="checkbox" type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="question"><b class="answer">Answer</b>
+                    <input class="checkbox" type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <button class=" btn-primary " id="button-previous" onclick="previous()">Previous</button>
+                <button class=" btn-primary" id="button-next" onclick="next()">Next</button>
+                <button class=" btn-danger " id="button-submit" onclick="submit()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/countdown.js"></script>
+</body>
+
+
+</html>
